@@ -1,24 +1,24 @@
 /* General Body Styling */
-body {
+/*body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background: #000; /* Black background */
-  color: #fff; /* White text color */
+  background: #000; /* Black background 
+  color: #fff; /* White text color 
   overflow-x: hidden;
   text-align: center;
-  height: 100vh; /* Full viewport height */
+  height: 100vh; /* Full viewport height /
   display: flex;
   flex-direction: column;
 }
 
-/* Navigation */
+/* Navigation *
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background: #222; /* Dark gray */
+  background: #222; /* Dark gray *
   position: sticky;
   top: 0;
   z-index: 100;
@@ -27,7 +27,7 @@ nav {
 nav .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #ffd700; /* Gold */
+  color: #ffd700; /* Gold
 }
 
 nav .nav-links {
@@ -43,15 +43,15 @@ nav .nav-links li a {
 }
 
 nav .nav-links li a:hover {
-  color: #ffd700; /* Gold hover effect */
+  color: #ffd700; /* Gold hover effect 
 }
 
-/* Hamburger Menu */
+/* Hamburger Menu 
 #hamburger-nav {
-  display: none; /* Hidden by default */
+  display: none; /* Hidden by default 
 }
 
-/* Hero Section */
+/* Hero Section 
 .hero-section {
   position: relative;
   min-height: 100vh;
@@ -63,12 +63,12 @@ nav .nav-links li a:hover {
   margin-top: 0;
 }
 
-/* Rotating Icons */
+/* Rotating Icons 
 .circle-container {
   position: relative;
   width: 400px;
   height: 400px;
-  /*margin-bottom: 15px;*/
+  /*margin-bottom: 15px;
   margin: 0 auto;
   animation: rotate 15s linear infinite;
 }
@@ -103,7 +103,7 @@ nav .nav-links li a:hover {
   }
 }
 
-/* Profile Picture */
+/* Profile Picture 
 .section__pic-container {
   position: absolute;
   top: 50%;
@@ -114,7 +114,289 @@ nav .nav-links li a:hover {
   border-radius: 50%;
   overflow: hidden;
   border: 5px solid white;
-  z-index: 10; /* Ensure it is above rotating icons */
+  z-index: 10; /* Ensure it is above rotating icons 
+}
+
+.section__pic-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Introductory Text 
+.section__text {
+  margin-top: 5px;
+}
+
+.section__text__p1 {
+  font-size: 1.5rem;
+  color: #f1f1f1;
+  margin: 0;
+}
+
+.title {
+  font-size: 3rem;
+  margin: 10px 0;
+  color: #ffd700; /* Gold color 
+}
+
+.section__text__p2 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #ccc;
+}
+
+.btn-container {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: #555;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ff9800;
+}
+
+/* Social Links 
+#socials-container {
+  margin-top: 20px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: grayscale(0%);
+}
+
+/* Media Queries for Responsiveness 
+@media (max-width: 768px) {
+  nav .nav-links {
+    display: none;
+  }
+
+  #hamburger-nav {
+    display: flex;
+    flex-direction: column;
+  }
+ .hero-section {
+        margin-top: 5px;
+    }
+
+  .circle-container {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 5px;
+    }
+  .section__text {
+        margin-top: 15px;
+    }
+  
+  .icon img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .section__pic-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  #socials-container .social-icon {
+    width: 30px;
+    height: 30px;
+  }
+}*/
+
+/* working CSS*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #000; /* Black background */
+  color: #fff; /* White text color */
+  overflow-x: hidden;
+  text-align: center;
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #222; /* Dark gray */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+nav .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffd700; /* Gold */
+}
+
+nav .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+nav .nav-links li a {
+  text-decoration: none;
+  color: #ffd700;
+  transition: color 0.3s ease;
+}
+
+nav .nav-links li a:hover {
+  color: #ffd700; /* Gold hover effect */
+}
+
+/* Hamburger Menu */
+#hamburger-nav {
+  display: none; /* Hidden by default */
+}
+
+/* Hero Section */
+/*.hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden; /* Prevent content from spilling outside 
+  padding: 0; /* Remove extra padding */
+  /*margin-top: 0;*
+}*/
+
+.hero-section {
+  position: relative;
+  height: 100vh; /* Ensure it takes up exactly one viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden; /* Prevent content from spilling outside */
+  margin: 0;
+  padding: 0; /* Remove extra padding */
+}
+
+/* Rotating Icons */
+/*.circle-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  /*margin-bottom: 15px;
+  margin: 0 auto;
+  animation: rotate 15s linear infinite;
+}*/
+
+/*.circle-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px; /* Adjust width to make it fit better 
+  height: 300px; /* Adjust height to make it fit better 
+  transform: translate(-50%, -50%);
+  animation: rotate 15s linear infinite;
+}*/
+
+.circle-container {
+  position: relative;
+  width: 250px; /* Adjust width to make it fit better */
+  height: 250px; /* Adjust height to make it fit better */
+  margin:0 auto;
+  animation: rotate 15s linear infinite;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 0 0;
+  transform: rotate(calc(360deg / var(--n) * var(--i))) translate(180px);
+}
+
+.icon img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.icon:hover img {
+  transform: scale(1.2);
+  filter: grayscale(0%);
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Profile Picture */
+/*.section__pic-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /*width: 150px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  /*overflow: hidden;
+  border: 5px solid white;
+  z-index: 10; /* Ensure it is above rotating icons 
+}*/
+
+.section__pic-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 3px solid white;
+  z-index: 10;
 }
 
 .section__pic-container img {
@@ -125,7 +407,7 @@ nav .nav-links li a:hover {
 
 /* Introductory Text */
 .section__text {
-  margin-top: 5px;
+  margin-top: -50px;
 }
 
 .section__text__p1 {
@@ -182,54 +464,6 @@ nav .nav-links li a:hover {
 .social-icon:hover {
   transform: scale(1.2);
   filter: grayscale(0%);
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  nav .nav-links {
-    display: none;
-  }
-
-  #hamburger-nav {
-    display: flex;
-    flex-direction: column;
-  }
- .hero-section {
-        margin-top: 5px;
-    }
-
-  .circle-container {
-        width: 300px;
-        height: 300px;
-        margin-bottom: 5px;
-    }
-  .section__text {
-        margin-top: 15px;
-    }
-  
-  .icon img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .section__pic-container {
-    width: 120px;
-    height: 120px;
-  }
-
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .btn {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
-
-  #socials-container .social-icon {
-    width: 30px;
-    height: 30px;
-  }
 }
 /* General Section Styling */
 #about {
