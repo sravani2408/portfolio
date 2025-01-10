@@ -260,6 +260,7 @@ nav {
   top: 0;
   z-index: 100;
   margin-bottom: -1000;
+  padding-bottom: 0;
 }
 
 nav .logo {
@@ -341,7 +342,9 @@ nav .nav-links li a:hover {
   position: relative;
   width: 250px; /* Adjust width to make it fit better */
   height: 250px; /* Adjust height to make it fit better */
-  margin:0 auto;
+  /*margin:0 auto;*/
+  margin-top:0;
+  margin-bottom: 0;
   animation: rotate 15s linear infinite;
 }
 
