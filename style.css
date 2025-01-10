@@ -837,3 +837,27 @@ h1 {
 .email-icon {
   height: 2.5rem;
 }
+
+/* Typing Effect */
+#typed-text {
+  font-family: inherit; /* Matches existing body font-family */
+  font-size: 1rem; /* Matches text-container font size */
+  line-height: 1.6; /* Consistent line height */
+  color: #ffd700; /* Matches text-container color */
+  white-space: pre-wrap; /* Preserves line breaks */
+  overflow: hidden; /* Ensures text doesn't overflow while typing */
+}
+
+#cursor {
+  font-weight: bold;
+  font-size: 1rem; /* Same size as typed text */
+  color: #ffd700; /* Matches text-container color */
+  animation: blink 0.7s steps(2) infinite; /* Creates blinking effect */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
