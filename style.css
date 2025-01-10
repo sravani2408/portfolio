@@ -414,7 +414,7 @@ nav .nav-links li a:hover {
   overflow: hidden;
   border: 5px solid white;
   z-index: 10;
-  margin-top: -200px;/* Ensure it is above rotating icons */
+  margin-top: -180px;/* Ensure it is above rotating icons */
 }
 
 
