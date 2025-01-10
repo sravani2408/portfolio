@@ -343,7 +343,7 @@ nav .nav-links li a:hover {
   width: 250px; /* Adjust width to make it fit better */
   height: 250px; /* Adjust height to make it fit better */
   /*margin:0 auto;*/
-  margin-top: -500px;
+  margin-top: -300px;
   animation: rotate 15s linear infinite;
 }
 
