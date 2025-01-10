@@ -259,7 +259,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  margin-bottom: -100;
+  margin-bottom: -1000;
 }
 
 nav .logo {
@@ -423,7 +423,7 @@ nav .nav-links li a:hover {
 
 /* Introductory Text */
 .section__text {
-  margin-top: -100px;
+  margin-top: -1000px;
 }
 
 .section__text__p1 {
