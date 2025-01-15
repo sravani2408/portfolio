@@ -434,16 +434,17 @@ nav .nav-links li a:hover {
 /* Default styles (assumed for large screens, desktop) */
 
 /* Media query for tablets (max-width: 768px) */
+/*
 @media screen and (max-width: 768px) {
   .hero-section {
-    height: auto; /* Allow flexible height */
+    height: auto; /* Allow flexible height 
     padding: 20px;
   }
 
   .circle-container {
     width: 200px;
     height: 200px;
-    margin-top: -200px; /* Adjust for smaller screens */
+    margin-top: -200px; /* Adjust for smaller screens 
   }
 
   .icon img {
@@ -454,7 +455,7 @@ nav .nav-links li a:hover {
   .section__pic-container {
     width: 120px;
     height: 120px;
-    margin-top: -150px; /* Adjust to align with icons */
+    margin-top: -150px; /* Adjust to align with icons 
   }
 
   .section__text {
@@ -488,113 +489,55 @@ nav .nav-links li a:hover {
     margin: 0 8px;
   }
 }
+*/
+@media (max-width: 768px) {
+  nav .nav-links {
+    display: none; /* Hide navigation links */
+  }
 
-/* Media query for mobile phones (max-width: 480px) */
-@media screen and (max-width: 480px) {
+  #hamburger-nav {
+    display: block; /* Show hamburger menu */
+  }
+
   .hero-section {
-    height: auto;
-    padding: 10px;
+    flex-direction: column;
+    padding: 20px;
   }
 
   .circle-container {
-    width: 150px;
-    height: 150px;
-    margin-top: -150px;
-  }
-
-  .icon img {
-    width: 20px;
-    height: 20px;
-  }
-
-  .section__pic-container {
-    width: 100px;
-    height: 100px;
-    margin-top: -100px;
-  }
-
-  .section__text {
-    margin-top: -150px;
-  }
-
-  .section__text__p1 {
-    font-size: 1rem;
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .section__text__p2 {
-    font-size: 0.9rem;
-  }
-
-  .btn {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
-
-  #socials-container {
-    margin-top: 10px;
-  }
-
-  .social-icon {
-    width: 25px;
-    height: 25px;
-    margin: 0 5px;
-  }
-}
-
-/* Media query for ultra-wide screens (min-width: 1200px) */
-@media screen and (min-width: 1200px) {
-  .circle-container {
-    width: 300px;
-    height: 300px;
-    margin-top: -350px;
-  }
-
-  .icon img {
-    width: 50px;
-    height: 50px;
-  }
-
-  .section__pic-container {
     width: 200px;
     height: 200px;
-    margin-top: -220px;
+    margin-top: -200px; /* Adjust spacing for smaller screens */
   }
 
-  .section__text {
-    margin-top: -450px;
+  .icon img {
+    width: 30px;
+    height: 30px;
   }
 
-  .section__text__p1 {
-    font-size: 2rem;
+  .section__pic-container {
+    width: 120px;
+    height: 120px;
+    margin-top: -150px;
   }
 
-  .title {
-    font-size: 4rem;
-  }
-
+  .section__text__p1,
+  .title,
   .section__text__p2 {
-    font-size: 1.5rem;
-  }
-
-  .btn {
-    padding: 12px 24px;
     font-size: 1.2rem;
   }
 
-  #socials-container {
-    margin-top: 25px;
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
   }
 
   .social-icon {
-    width: 50px;
-    height: 50px;
-    margin: 0 15px;
+    width: 30px;
+    height: 30px;
   }
 }
+
 
 /* General Section Styling */
 #about {
