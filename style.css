@@ -234,7 +234,7 @@ nav .nav-links li a:hover {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    margin: 100;
+    margin: -200;
   }
   /*.circle-container {
     width: 10px;
