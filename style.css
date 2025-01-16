@@ -256,7 +256,7 @@ nav .nav-links li a:hover {
 */
 @media (max-width: 768px) {
   nav .nav-links {
-    display: none; /* Hide navigation links */
+    display: none; 
   }
 
   #hamburger-nav {
@@ -265,24 +265,24 @@ nav .nav-links li a:hover {
 
   .hero-section {
     flex-direction: flex;
-    padding: 10px;
+    padding: 20px;
   }
 
   .circle-container {
-    width: 150px;
-    height: 150px;
-    margin-top: -50px; /* Adjust spacing for smaller screens */
+    width: 130px;
+    height: 130px;
+    margin-top: -100px; /* Adjust spacing for smaller screens */
   }
 
   .icon img {
-    width: 10px;
-    height: 10px;
+    width: 20px;
+    height: 20px;
   }
 
   .section__pic-container {
     width: 120px;
     height: 120px;
-    margin-top: -70px;
+    margin-top: -90px;
   }
 
   .section__text__p1,
