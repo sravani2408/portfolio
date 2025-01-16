@@ -216,31 +216,40 @@ nav .nav-links li a:hover {
     display: block; /* Show hamburger menu */
   }
 
-  .hero-section {
+  /*.hero-section {
     flex-direction: flex;
     padding: 0px;
+  }*/
+.hero-section {
+    display: flex;
+    flex-direction: column; /* Stack vertically */
+    padding: 10px; /* Adjust spacing */
+    text-align: center;
   }
-
-  .circle-container {
+  
+ .circle-container {
     width: 10px;
     height: 10px;
-    margin-top: -220px; /* Adjust spacing for smaller screens */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
   }
-
-  .icon img {
+  /*.circle-container {
     width: 10px;
     height: 10px;
-  }
-
-  /*.section__pic-container {
-    width: 120px;
-    height: 120px;
-    margin-top: -150px;
+    margin-top: -220px; /* Adjust spacing for smaller screens 
   }*/
 
-.section__pic-container {
-    width: 50px;
-    height: 50px;
+  .icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .section__pic-container {
+    width: 120px;
+    height: 120px;
     margin-top: -150px;
   }
 
