@@ -223,7 +223,7 @@ nav .nav-links li a:hover {
 .hero-section {
     display: flex;
     flex-direction: column; /* Stack vertically */
-    padding: 10px; /* Adjust spacing */
+    padding: 0px; /* Adjust spacing */
     text-align: center;
   }
   
@@ -234,7 +234,7 @@ nav .nav-links li a:hover {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    margin: 0;
+    margin: 100;
   }
   /*.circle-container {
     width: 10px;
