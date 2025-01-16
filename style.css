@@ -192,68 +192,7 @@ nav .nav-links li a:hover {
   filter: grayscale(0%);
 }
 
-
 /*media queries for profile section*/
-
-/* Default styles (assumed for large screens, desktop) */
-
-/* Media query for tablets (max-width: 768px) */
-/*
-@media screen and (max-width: 768px) {
-  .hero-section {
-    height: auto; /* Allow flexible height 
-    padding: 20px;
-  }
-
-  .circle-container {
-    width: 200px;
-    height: 200px;
-    margin-top: -200px; /* Adjust for smaller screens 
-  }
-
-  .icon img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .section__pic-container {
-    width: 120px;
-    height: 120px;
-    margin-top: -150px; /* Adjust to align with icons 
-  }
-
-  .section__text {
-    margin-top: -250px;
-  }
-
-  .section__text__p1 {
-    font-size: 1.2rem;
-  }
-
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .section__text__p2 {
-    font-size: 1rem;
-  }
-
-  .btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
-  }
-
-  #socials-container {
-    margin-top: 15px;
-  }
-
-  .social-icon {
-    width: 30px;
-    height: 30px;
-    margin: 0 8px;
-  }
-}
-*/
 @media (max-width: 768px) {
   nav .nav-links {
     display: none; /* Hide navigation links */
@@ -283,9 +222,9 @@ nav .nav-links li a:hover {
   }
 
   .circle-container {
-    width: 70px;
-    height: 90px;
-    margin-top: -225px; /* Adjust spacing for smaller screens */
+    width: 50px;
+    height: 50px;
+    margin-top: -220px; /* Adjust spacing for smaller screens */
   }
 
   .icon img {
@@ -296,7 +235,7 @@ nav .nav-links li a:hover {
   .section__pic-container {
     width: 120px;
     height: 120px;
-    margin-top: -130px;
+    margin-top: -150px;
   }
 
   .section__text__p1,
