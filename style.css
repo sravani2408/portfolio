@@ -283,9 +283,9 @@ nav .nav-links li a:hover {
   }
 
   .circle-container {
-    width: 130px;
-    height: 130px;
-    margin-top: -200px; /* Adjust spacing for smaller screens */
+    width: 70px;
+    height: 90px;
+    margin-top: -225px; /* Adjust spacing for smaller screens */
   }
 
   .icon img {
@@ -296,7 +296,7 @@ nav .nav-links li a:hover {
   .section__pic-container {
     width: 120px;
     height: 120px;
-    margin-top: -110px;
+    margin-top: -130px;
   }
 
   .section__text__p1,
