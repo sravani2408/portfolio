@@ -222,8 +222,8 @@ nav .nav-links li a:hover {
   }
 
   .circle-container {
-    width: 50px;
-    height: 50px;
+    width: 10px;
+    height: 10px;
     margin-top: -220px; /* Adjust spacing for smaller screens */
   }
 
