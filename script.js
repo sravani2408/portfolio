@@ -42,6 +42,10 @@ function typeText(targetElementId, textArray, typingSpeed =30, delayBetweenSente
   type();
 }
 
+function toggleNav() {
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    }
 // Initial setup: Show only the profile section on page load
 document.addEventListener("DOMContentLoaded", () => {
   showSection('profile'); // Ensure only the Profile section is visible initially
