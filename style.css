@@ -1,97 +1,116 @@
 /* working CSS*/
 
-body {
+/* ========================
+   BASIC RESET & BODY STYLES
+   ======================== */
+
+* {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: #000; /* Black background */
-  color: #fff; /* White text color */
-  overflow-x: hidden;
-  text-align: center;
-  height: 100vh; /* Full viewport height */
-  display: flex;
-  flex-direction: column;
+  box-sizing: border-box;
 }
 
-/* Navigation */
+body {
+  font-family: Arial, sans-serif;
+  background: #000;      /* Black background */
+  color: #fff;           /* White text color */
+  text-align: center;
+  overflow-x: hidden;    /* Prevent horizontal scroll if something overflows */
+}
+
+/* ========================
+   NAVIGATION
+   ======================== */
+
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 1rem 2rem;
   background: #222; /* Dark gray */
   position: sticky;
   top: 0;
   z-index: 100;
-  margin-bottom: -100;
-  padding-bottom: 0;
+  /* No negative margin-bottom */
 }
 
 nav .logo {
-  font-size: 1.5rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   font-weight: bold;
   color: #ffd700; /* Gold */
 }
 
+/* Basic horizontal nav links */
 nav .nav-links {
   display: flex;
+  gap: 1.5rem;
   list-style: none;
-  gap: 20px;
 }
 
 nav .nav-links li a {
   text-decoration: none;
   color: #ffd700;
   transition: color 0.3s ease;
+  font-size: clamp(0.9rem, 2vw, 1rem);
 }
 
 nav .nav-links li a:hover {
-  color: #ffd700; /* Gold hover effect */
+  color: #ffd700; /* same gold, but you could pick a different hover color */
 }
 
-/* Hamburger Menu */
+/* Hamburger menu hidden by default */
 #hamburger-nav {
-  display: none; /* Hidden by default */
+  display: none;
 }
 
+/* ========================
+   HERO SECTION
+   ======================== */
 
 .hero-section {
-  position: relative;
-  height: 100vh; /* Ensure it takes up exactly one viewport height */
+  /* Use min-height so it can grow if needed */
+  min-height: 100vh;  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  overflow: hidden; /* Prevent content from spilling outside */
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0; /* Remove extra padding */
+  position: relative;
+  overflow: hidden; /* so rotating icons don't cause scrolling if they go outside */
+  padding: 1rem;
 }
 
-/* Rotating Icons */
-
+/* Rotating Icons Container */
 .circle-container {
   position: relative;
-  width: 250px; /* Adjust width to make it fit better */
-  height: 250px; /* Adjust height to make it fit better */
-  /*margin:0 auto;*/
-  margin-top: -300px;
+  /* fluid sizing with clamp - shrinks on small, grows up to 250px on large */
+  width: clamp(200px, 35vw, 250px);
+  height: clamp(200px, 35vw, 250px);
+
+  /* center it horizontally */
+  margin: 0 auto 2rem auto;
+
   animation: rotate 15s linear infinite;
 }
 
+@keyframes rotate {
+  0%   { transform: rotate(0deg);   }
+  100% { transform: rotate(360deg); }
+}
+
+/* Each rotating icon absolutely placed around circle */
 .icon {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform-origin: 0 0;
-  transform: rotate(calc(360deg / var(--n) * var(--i))) translate(180px);
+  transform-origin: 0 0; /* pivot point at top-left corner of the icon itself */
+  /* You presumably set --i and --n in HTML to position them. Example:
+     style="--i:0; --n:13;" means 13 icons total, this one is index 0, etc. */
+  transform: rotate(calc(360deg / var(--n) * var(--i))) translate(80%);
 }
 
 .icon img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+  width: clamp(30px, 6vw, 40px);
+  height: clamp(30px, 6vw, 40px);
   filter: grayscale(100%);
   transition: transform 0.3s, filter 0.3s;
 }
@@ -101,29 +120,20 @@ nav .nav-links li a:hover {
   filter: grayscale(0%);
 }
 
-@keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+/* Profile Picture Container, absolutely centered on top of the circle */
 .section__pic-container {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 150px;
-  height: 150px;
+  /* Move it left/up by half its own size */
   transform: translate(-50%, -50%);
+  width: clamp(120px, 20vw, 150px);
+  height: clamp(120px, 20vw, 150px);
+  border: 5px solid #fff;
   border-radius: 50%;
   overflow: hidden;
-  border: 5px solid white;
-  z-index: 10;
-  margin-top: -180px;/* Ensure it is above rotating icons */
+  z-index: 1;
 }
-
 
 .section__pic-container img {
   width: 100%;
@@ -131,41 +141,46 @@ nav .nav-links li a:hover {
   object-fit: cover;
 }
 
-/* Introductory Text */
+/* Introductory Text below the circle/pic */
 .section__text {
-  margin-top: -380px;
+  margin-top: clamp(0.5rem, 2vw, 2rem);
 }
 
+/* "Hello, I'm" text */
 .section__text__p1 {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
   color: #f1f1f1;
-  margin: 0;
+  margin-bottom: 0.5rem;
 }
 
+/* Big name text */
 .title {
-  font-size: 3rem;
-  margin: 10px 0;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 0.5rem;
   color: #ffd700; /* Gold color */
 }
 
+/* Sub-heading / tagline */
 .section__text__p2 {
-  font-size: 1.2rem;
-  margin: 10px 0;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  margin: 0.5rem 0 1rem 0;
   color: #ccc;
 }
 
+/* Buttons container */
 .btn-container {
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
+/* Generic button styling */
 .btn {
-  padding: 10px 20px;
-  margin: 5px;
-  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+  margin: 0.3rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  color: white;
+  color: #fff;
   background-color: #555;
   transition: background-color 0.3s ease;
 }
@@ -174,99 +189,37 @@ nav .nav-links li a:hover {
   background-color: #ff9800;
 }
 
-/* Social Links */
+/* ========================
+   EXAMPLE: SOCIAL ICONS
+   ======================== */
 #socials-container {
-  margin-top: 20px;
+  margin-top: 1rem;
 }
 
 .social-icon {
-  width: 40px;
-  height: 40px;
-  margin: 0 10px;
-  transition: transform 0.3s ease, filter 0.3s ease;
+  width: clamp(30px, 5vw, 40px);
+  height: clamp(30px, 5vw, 40px);
+  margin: 0 0.5rem;
   filter: grayscale(100%);
+  transition: transform 0.3s, filter 0.3s;
 }
 
 .social-icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.1);
   filter: grayscale(0%);
 }
 
-/*media queries for profile section*/
-@media (max-width: 768px) {
+/* ========================
+   OPTIONAL: MAKE NAV LINKS
+   STACK IF SCREEN < SOME THRESHOLD
+   (MINIMAL MEDIA QUERY EXAMPLE)
+   ======================== */
+@media (max-width: 600px) {
   nav .nav-links {
-    display: none; /* Hide navigation links */
-    flex-direction: column; /* Stacking links vertically */
-    position: absolute; /* Overlay style */
-    top: 50px;
-    right: 0;
-    background-color: #222; /* Match nav background */
-    padding: 20px;
-    width: 100%; /* Full screen width */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* or you could let them wrap automatically */
   }
-
-  nav .nav-links li a {
-  color: yellow; /* Set link text color to yellow */
-  text-decoration: none; /* Remove the underline */
-  font-size: 1rem; /* Optional: Adjust font size if needed */
- }
-  
   #hamburger-nav {
-    display: block; /* Show hamburger menu */
-  }
-
-  /*.hero-section {
-    flex-direction: flex;
-    padding: 0px;
-  }*/
-.hero-section {
-    display: flex;
-    flex-direction: column; /* Stack vertically */
-    padding: 0px; /* Adjust spacing */
-    text-align: center;
-  }
-  
- .circle-container {
-    width: 10px;
-    height: 10px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: -200;
-  }
-  /*.circle-container {
-    width: 10px;
-    height: 10px;
-    margin-top: -220px; /* Adjust spacing for smaller screens 
-  }*/
-
-  .icon img {
-    width: 20px;
-    height: 20px;
-  }
-
-  .section__pic-container {
-    width: 160px;
-    height: 160px;
-    margin-top: -150px;
-  }
-
-  .section__text__p1,
-  .title,
-  .section__text__p2 {
-    font-size: 1.2rem;
-  }
-
-  .btn {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-  }
-
-  .social-icon {
-    width: 30px;
-    height: 30px;
+    display: block; /* or keep hidden if you prefer auto-wrapping */
   }
 }
 
