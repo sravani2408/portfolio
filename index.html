@@ -120,9 +120,10 @@
       <h1 class="title">Sravani Ganta</h1>
       <p class="section__text__p2">Welcome to my Digital playground. Let’s build, create, and innovate together!</p>
       <div class="btn-container">
-          <button class="btn btn-color-1" onclick="window.open('./resume.pdf', '_blank')">Download CV</button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
-        </div>
+  <!-- Use <a> instead of <button> for better behavior when downloading -->
+      <a href="./resume.pdf" download="sravani_resume.pdf" class="btn btn-color-1">Download CV</a>
+      <button class="btn btn-color-1" onclick="showSection('contact')">Contact Info</button>
+    </div>
         <div id="socials-container">
           <a href="https://www.linkedin.com/in/sravani-ganta-6836b2168/" target="_blank">
             <img src="./linkedin2.png" alt="LinkedIn Profile of Sravani Ganta" class="social-icon" />
