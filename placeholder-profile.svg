@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#2a2a2a"/>
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#ffd700" stroke-width="4"/>
+  
+  <!-- Professional woman silhouette with glasses -->
+  <circle cx="100" cy="80" r="30" fill="#d4a574" opacity="0.9"/>
+  
+  <!-- Hair -->
+  <path d="M70 65 Q100 50 130 65 Q130 85 100 90 Q70 85 70 65 Z" fill="#2c1810" opacity="0.8"/>
+  
+  <!-- Glasses frame -->
+  <circle cx="90" cy="78" r="8" fill="none" stroke="#333" stroke-width="2"/>
+  <circle cx="110" cy="78" r="8" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M98 78 L102 78" stroke="#333" stroke-width="2"/>
+  
+  <!-- Professional attire -->
+  <path d="M70 105 Q100 100 130 105 L125 140 Q100 145 75 140 Z" fill="#1a472a" opacity="0.8"/>
+  
+  <!-- Collar -->
+  <path d="M85 105 Q100 100 115 105 L110 115 Q100 110 90 115 Z" fill="#ffd700" opacity="0.6"/>
+  
+  <!-- Shadow/depth -->
+  <circle cx="102" cy="102" r="95" fill="none" stroke="#000" stroke-width="1" opacity="0.2"/>
+</svg>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sravani Ganta - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="advanced-effects.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Particle System Canvas -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- Floating Elements -->
+    <div class="floating-elements"></div>
+    
+    <!-- Navigation Bar -->
+    <nav id="desktop-nav">
+        <div class="logo">Sravani Ganta</div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="javascript:void(0)" onclick="showSection('profile'); return false;" class="magnetic">Profile</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('about'); return false;" class="magnetic">About</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('skills'); return false;" class="magnetic">Skills</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('experience'); return false;" class="magnetic">Experience</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('projects'); return false;" class="magnetic">Projects</a></li>
+            <li><a href="javascript:void(0)" onclick="showSection('contact'); return false;" class="magnetic">Contact</a></li>
+        </ul>
+        <!-- Hamburger Menu -->
+        <div id="hamburger-nav" onclick="toggleNav()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+   <!-- {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div id="flash-messages">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ 'success' if category == 'success' else 'error' }}">
+                        {{ message }}
+                        <span class="close-alert" onclick="this.parentElement.style.display='none'">&times;</span>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}-->
+
+    <!-- Profile Section -->
+    <section id="profile" class="section visible">
+        <div class="hero-section">
+            <!-- Rotating Icons -->
+            <div class="rotating-background">
+                <div class="circle-container">
+                    <!-- HTML -->
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 0;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+                        </div>
+                    </a>
+                    <!-- Python -->
+                    <a href="https://docs.python.org/3/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 1;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+                        </div>
+                    </a>
+                    <!-- SQL -->
+                    <a href="https://dev.mysql.com/doc/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 2;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+                        </div>
+                    </a>
+                    <!-- .NET -->
+                    <a href="https://learn.microsoft.com/en-us/dotnet/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 3;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=".NET" />
+                        </div>
+                    </a>
+                    <!-- C -->
+                    <a href="https://en.cppreference.com/w/c" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 4;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" />
+                        </div>
+                    </a>
+                    <!-- Data Structures -->
+                    <a href="https://www.geeksforgeeks.org/data-structures/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 5;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="Data Structures" />
+                        </div>
+                    </a>
+                    <!-- Azure -->
+                    <a href="https://learn.microsoft.com/en-us/azure/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 6;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" />
+                        </div>
+                    </a>
+                    <!-- Power BI -->
+                    <a href="https://learn.microsoft.com/en-us/power-bi/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 7;">
+                            <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI" />
+                        </div>
+                    </a>
+                    <!-- AWS -->
+                    <a href="https://aws.amazon.com/documentation/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 8;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS" />
+                        </div>
+                    </a>
+                    <!-- Java -->
+                    <a href="https://docs.oracle.com/en/java/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 9;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+                        </div>
+                    </a>
+                    <!-- OpenAI -->
+                    <a href="https://platform.openai.com/docs/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 10;">
+                            <img src="https://static.vecteezy.com/system/resources/previews/022/227/364/non_2x/openai-chatgpt-logo-icon-free-png.png" alt="OpenAI" />
+                        </div>
+                    </a>
+                    <!-- Gemini -->
+                    <a href="https://ai.google.dev/" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 11;">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" alt="Gemini" />
+                        </div>
+                    </a>
+                    <!-- GitHub -->
+                    <a href="https://docs.github.com/en" target="_blank" rel="noopener noreferrer">
+                        <div class="icon" style="--i: 12;">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Static Profile Picture -->
+            <div class="section__pic-container">
+                <img src="./profile-photo.jpg" alt="Profile Picture of Sravani Ganta" class="profile-pic" />
+            </div>
+        </div>
+
+        <!-- Introductory Section -->
+        <div class="section__text">
+            <p class="section__text__p1">Hello, I'm</p>
+            <h1 class="title">Sravani Ganta</h1>
+            <p class="section__text__p2">Welcome to my Digital playground. Let's build, create, and innovate together!</p>
+            <div class="btn-container">
+                <button class="btn btn-enhanced magnetic ripple-effect" onclick="window.open('./Sravani_Ganta_Resume.pdf', '_blank')"> Download CV</button>
+                <button class="btn btn-enhanced magnetic ripple-effect" onclick="showSection('contact')">
+                    <i class="fas fa-envelope"></i> Contact Info
+                </button>
+            </div>
+            <div id="socials-container">
+                <a href="https://www.linkedin.com/in/sravani-ganta-6836b2168/" target="_blank" title="LinkedIn Profile">
+                    <img src="social-linkedin.svg" alt="LinkedIn Profile of Sravani Ganta" class="social-icon" />
+                </a>
+                <a href="https://github.com/sravani2408" target="_blank" title="GitHub Profile">
+                    <img src="social-github.svg" alt="GitHub Profile of Sravani Ganta" class="social-icon" />
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="about-header">
+            <p class="section__text__p1 reveal-on-scroll">Get To Know More</p>
+            <h1 class="title reveal-on-scroll">About Me</h1>
+        </div>
+        
+        <div class="about-main-container">
+            <!-- Introduction Section -->
+            <div class="introduction-card glass-card reveal-on-scroll">
+                <div class="bio-container">
+                    <div class="static-text-container">
+                        <p>Innovative Cloud and AI Engineering professional with 5+ years of experience specializing in Azure-based data analytics and Generative AI solutions. Proven expertise in designing scalable ETL pipelines, deploying NLP and machine learning models, and operationalizing end-to-end AI workflows using Azure Data Factory, Databricks, Azure ML, and Azure AI Foundry. Skilled in implementing Azure OpenAI services, developing intelligent agents, and integrating Generative AI capabilities to drive business transformation.</p>
+                        <p>Certified Azure OpenAI Specialist, Azure Cognitive Services Specialist, AZAI Generative AI Specialist, AZAI AzureML Advanced, and Microsoft SQL expert, with a strong foundation in data governance, cloud automation, and enterprise-scale solution delivery.</p>
+                        <p>Beyond my technical expertise, I am passionate about కూచిపూడి (Kuchipudi) classical dance and creating digital artworks, which keeps me creatively inspired and culturally connected.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Professional Journey Timeline -->
+            <div class="timeline-container glass-card reveal-on-scroll">
+                <h3 class="timeline-title">Professional Journey</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2024-Present</div>
+                        <div class="timeline-content">
+                            <h4>Cloud Engineer - LTIMindtree, Canada</h4>
+                           <!-- <p>Designing modular ETL pipelines using Azure Data Factory and PySpark in Databricks. Built scalable analytics workflows and developed NLP pipelines with Azure OpenAI.</p>-->
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2023</div>
+                        <div class="timeline-content">
+                            <h4>Teaching Assistant & ML Researcher - University of Waterloo</h4>
+                           <!-- <p>Conducted research on weight initialization strategies for knowledge transfer between models. Achieved 10% faster convergence and 0.5% accuracy improvement.</p>-->
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2020-2022</div>
+                        <div class="timeline-content">
+                            <h4>Database Administrator - Accenture Private Ltd, India</h4>
+                          <!-- <p>Managed Microsoft SQL Server environments, implemented High Availability solutions, and provided 24/7 support for critical database systems.</p>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="education-container glass-card reveal-on-scroll">
+                <h3 class="education-title">Education</h3>
+                <div class="education-timeline">
+                    <div class="education-item">
+                        <div class="education-date">2022-2024</div>
+                        <div class="education-content">
+                            <div class="education-degree">
+                                <h4>Master of Engineering</h4>
+                                <h5>Electrical and Computer Engineering</h5>
+                            </div>
+                            <div class="education-institution">
+                                <i class="fas fa-university"></i>
+                                <h5>University of Waterloo, Canada</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-item">
+                        <div class="education-date">2016-2020</div>
+                        <div class="education-content">
+                            <div class="education-degree">
+                                <h4>Bachelor of Technology</h4>
+                                <h5>Electronics and Instrumentation Engineering</h5>
+                            </div>
+                            <div class="education-institution">
+                                <i class="fas fa-university"></i>
+                                <span>Jawaharlal Nehru Technological University, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Interests -->
+            <div class="interests-grid">
+                <div class="interest-card glass-card reveal-on-scroll stagger-child" data-tilt>
+                    <div class="card-front">
+                        <div class="card-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Passion</h3>
+                        <p>కూచిపూడి</p>
+                        <small>Classical Dance</small>
+                    </div>
+                    <div class="card-back">
+                        <h4>Cultural Arts</h4>
+                        <ul>
+                            <li>Traditional Dance Forms</li>
+                            <li>Cultural Preservation</li>
+                            <li>Artistic Expression</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="interest-card glass-card reveal-on-scroll stagger-child" data-tilt>
+                    <div class="card-front">
+                        <div class="card-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Hobby</h3>
+                        <p>Artworks</p>
+                        <small>Creative Expression</small>
+                    </div>
+                    <div class="card-back">
+                        <h4>Artistic Creations</h4>
+                        <ul>
+                            <li>Mandala Art</li>
+                            <li>Pencil Sketches</li>
+                            <li>Paintings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Technical Skills</h1>
+        <div class="container">
+            <div class="card">
+                <h3><i class="fas fa-code"></i> Programming Languages</h3>
+                <ul>
+                    <li><span>✔</span> Python</li>
+                    <li><span>✔</span> SQL</li>
+                    <li><span>✔</span> C</li>
+                    <li><span>✔</span> HTML</li>
+                    <li><span>✔</span> ASP.Net</li>
+                    <li><span>✔</span> KQL</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-cloud"></i> Azure Services</h3>
+                <ul>
+                    <li><span>✔</span> Data Factory</li>
+                    <li><span>✔</span> Logic Apps</li>
+                    <li><span>✔</span> Function Apps</li>
+                    <li><span>✔</span> Azure SQL</li>
+                    <li><span>✔</span> Monitor</li>
+                    <li><span>✔</span> Application Insights</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-robot"></i> AI & Analytics</h3>
+                <ul>
+                    <li><span>✔</span> Azure OpenAI</li>
+                    <li><span>✔</span> Cognitive Services</li>
+                    <li><span>✔</span> Copilot integrations</li>
+                    <li><span>✔</span> NLP</li>
+                    <li><span>✔</span> ML Pipelines</li>
+                    <li><span>✔</span> Prompt Flow</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-database"></i> Data Engineering</h3>
+                <ul>
+                    <li><span>✔</span> ETL</li>
+                    <li><span>✔</span> Dimensional Modeling</li>
+                    <li><span>✔</span> Azure Data Lake</li>
+                    <li><span>✔</span> Databricks</li>
+                    <li><span>✔</span> Synapse</li>
+                    <li><span>✔</span> SQL Server</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-cogs"></i> Libraries & Frameworks</h3>
+                <ul>
+                    <li><span>✔</span> TensorFlow</li>
+                    <li><span>✔</span> PyTorch</li>
+                    <li><span>✔</span> Keras</li>
+                    <li><span>✔</span> NumPy</li>
+                    <li><span>✔</span> Pandas</li>
+                    <li><span>✔</span> PySpark</li>
+                    <li><span>✔</span> NLTK</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                <ul>
+                    <li><span>✔</span> Tableau</li>
+                    <li><span>✔</span> Power BI</li>
+                    <li><span>✔</span> Docker</li>
+                    <li><span>✔</span> Git</li>
+                    <li><span>✔</span> Visual Studio</li>
+                    <li><span>✔</span> Jupyter</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <p class="section__text__p1">My Professional</p>
+        <h1 class="title">Work Experience</h1>
+        <div class="experience-timeline">
+            <div class="experience-item">
+                <div class="experience-date">April 2024 – Present</div>
+                <div class="experience-content">
+                    <h3>Cloud Engineer</h3>
+                    <h4>LTIMindtree, Canada</h4>
+                    <ul>
+                        <li>Designed modular ETL pipelines using Azure Data Factory and PySpark in Databricks to ingest structured/unstructured data into Azure Data Lake Storage Gen2</li>
+                        <li>Built scalable analytics workflows on Databricks and Synapse using dimensional modeling for downstream AI and BI needs</li>
+                        <li>Developed NLP pipelines with Azure OpenAI and Cognitive Search, to enhance semantic document retrieval</li>
+                        <li>Automated model training and deployment using Azure ML SDK & CLI, streamlined data prep and hyperparameter tuning</li>
+                        <li>Deployed chatbot workflows in Azure Prompt Flow, improving domain-specific accuracy by 20%</li>
+                        <li>Engineered solutions with Azure AI Foundry to support digital transformation aligned with business KPIs</li>
+                        <li>Containerized ML applications using Docker and deployed on Azure Web Apps, integrating APIs and caching for performance</li>
+                        <li>Collaborated on Agile teams to deliver end-to-end AI/ML workflows with data governance and performance optimization</li>
+                        <li>Conducted data extraction and transformation using advanced SQL and Python, integrating disparate sources into analytics 
+platforms</li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">September 2023 – December 2023</div>
+                <div class="experience-content">
+                    <h3>Teaching Assistant</h3>
+                    <h4>University of Waterloo</h4>
+                    <ul>
+                        <li>Provided guidance and assistance to undergraduate students in problem-solving and assignments for ECE 358 - Computer Networks</li>
+                        <li>Conducted online office hours and offered support to students enrolled in the course</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">April 2023 – August 2023</div>
+                <div class="experience-content">
+                    <h3>Machine Learning Researcher</h3>
+                    <h4>University of Waterloo</h4>
+                    <ul>
+                        <li>Designed and implemented weight initialization strategies to transfer knowledge from larger models to smaller models</li>
+                        <li>Utilized pre-trained ResNet and ShuffleNet architectures coupled with Kaiming normalization on CIFAR-100 and ImageNet datasets</li>
+                        <li>Achieved 10% faster convergence and a 0.5% increase in accuracy for child models through optimized strategies</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">October 2020 – August 2022</div>
+                <div class="experience-content">
+                    <h3>Database Administrator</h3>
+                    <h4>Accenture Private Ltd, India</h4>
+                    <ul>
+                        <li>Installed, configured, and upgraded Microsoft SQL Server in complex on-premises and clustered environments, ensuring high 
+availability, scalability, and optimal system reliability.</li>
+                        <li>Migrated SQL Server databases across environments with minimal downtime, ensuring data integrity and reliability</li>
+                        <li>Designed and implemented High Availability and Disaster Recovery solutions, including Database Mirroring, Log Shipping, 
+Transactional Replication, and SQL Server failover clusters, minimizing data loss and enhancing disaster recovery processes.</li>
+                        <li>Configured and maintained SQL Server maintenance plans to address fragmentation and disk space issues, ensuring successful 
+execution of backups, index rebuilds, and statistics updates through proactive monitoring.</li>
+                        <li>Managed SQL Server authentication, roles, and permissions, implementing organizational security policies, and configured 
+Linked Servers, Endpoints, Operators, and Database Email for seamless integration and proactive alerting across environments</li>
+                        <li>Provided 24/7 on-call support for critical database environments, ensuring stability and availability by conducting consistency 
+checks and implementing granular backup and recovery strategies</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="project-container">
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">SQL Migration, Pipeline Dynamics, and Power BI Insights</h2>
+                    <p class="project-description">Orchestrated migration of on-premises SQL database to Azure with ETL pipeline using Azure Data Factory and Power BI integration for advanced analytics.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Microsoft SQL Server</span>
+                        <span class="tech-tag">Azure</span>
+                        <span class="tech-tag">Power BI</span>
+                        <span class="tech-tag">ETL</span>
+                    </div>
+                </div>
+                <button class="btn github-btn" onclick="window.open('https://github.com/sravani2408', '_blank')">
+                    <i class="fab fa-github"></i> GitHub
+                </button>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Medical Condition Classification & Drug Review Analysis</h2>
+                    <p class="project-description">Developed NLP and ML-based drug recommendation system using trigram TF-IDF vectorization and Passive Aggressive Classifier, achieving 98.2% accuracy.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Sentiment Analysis</span>
+                        <span class="tech-tag">Machine Learning</span>
+                    </div>
+                </div>
+                <button class="btn github-btn" onclick="window.open('https://github.com/sravani2408/Medical-Condition-Classification-Drug-Review-Analysis', '_blank')">
+                    <i class="fab fa-github"></i> GitHub
+                </button>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Google Cloud Data Pipelining with Airflow</h2>
+                    <p class="project-description">Developed and automated data pipeline to extract, transform, and clean YouTube video reviews using Google API, Python, and Apache Airflow on AWS EC2.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Google API</span>
+                        <span class="tech-tag">Airflow</span>
+                        <span class="tech-tag">AWS</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                </div>
+                <button class="btn github-btn" onclick="window.open('https://github.com/sravani2408', '_blank')">
+                    <i class="fab fa-github"></i> GitHub
+                </button>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <h2 class="project-title">Admin Login Page for Chatbot Management</h2>
+                    <p class="project-description">Developed admin interface using Next.js and React to manage chatbot user information, including activity tracking, payment management, and renewal countdowns.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+                <button class="btn github-btn" onclick="window.open('https://github.com/sravani2408', '_blank')">
+                    <i class="fab fa-github"></i> GitHub
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>Email</h3>
+                        <p>sravaniganta1999@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/sravani-ganta-6836b2168/" target="_blank">Connect with me</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/sravani2408" target="_blank">View my repositories</a>
+                    </div>
+                </div>
+            </div>
+            <!--<form class="contact-form" action="{{ url_for('contact') }}" method="POST">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+            </form>-->
+
+            <form class="contact-form" action="https://formspree.io/f/xzzgodzq" method="POST">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+    <!-- Hidden field to help with spam filtering -->
+                <input type="hidden" name="_subject" value="New Portfolio Contact Form Submission">
+    <!-- Formspree configuration -->
+                <input type="hidden" name="_next" value="/">
+                <input type="hidden" name="_captcha" value="false">
+    
+                <button type="submit" class="btn btn-primary">
+                <i class="fas fa-paper-plane"></i> Send Message
+                </button>
+        </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="particles.js"></script>
+    <script src="3d-effects.js"></script>
+    <script src="voice-commands.js"></script>
+    <script src="cursor-effects.js"></script>
+    <script src="about-animations.js"></script>
+</body>
+</html>
